@@ -3,13 +3,20 @@ window.addEventListener('DOMContentLoaded', () => {
     const tabLinks = document.querySelectorAll('.about__link'),
           tabLinkWrapper = document.querySelector('.about__links-wrapper'),
           tabContent = document.querySelectorAll('.about__content-item'),
+          imgContent = document.querySelectorAll('.about__img'),
           activeLinkClass = 'active-link',
           activeContentClass = 'active-content';
+
+    //show default tab on page load
+    showTabsContent();
+
+    
           
     //show tab content
-    function showTabsContent(i) {
+    function showTabsContent(i = 0) {
         tabContent[i].classList.add(activeContentClass);
         tabLinks[i].classList.add(activeLinkClass);
+        imgContent[i].classList.add(activeContentClass);
     }
 
     //hide tabs content
@@ -19,6 +26,9 @@ window.addEventListener('DOMContentLoaded', () => {
         })
         tabLinks.forEach(link => {
             link.classList.remove(activeLinkClass);
+        })
+        imgContent.forEach(img => {
+            img.classList.remove(activeContentClass);
         })
     }
 
