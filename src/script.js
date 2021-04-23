@@ -22,7 +22,7 @@ window.addEventListener('DOMContentLoaded', () => {
         })
     }
 
-    //add event listener
+    //add event listener to parent, using delegation in case we dynamically add more links
     tabLinkWrapper.addEventListener('click', (e) => {
         const target = e.target;
 
